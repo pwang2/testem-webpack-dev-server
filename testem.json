@@ -1,0 +1,14 @@
+{
+  "framework": "tap",
+  "test_page": "test.html",
+  "disable_watching": true,
+  "src_files": [],
+  "serve_files": [],
+  "serve_files_ignore": [],
+  "on_start": {
+    "command":"./start_dev_server.sh",
+    "wait_for_text": "[built]",
+    "wait_for_text_timeout": 300000
+  },
+  "on_exit": "./kill_dev_server.sh"
+}

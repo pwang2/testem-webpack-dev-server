@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Testem + WebpackDevServer</title>
+  <script src="/testem.js"></script>
+</head>
+
+<body>
+  <h1>TAP</h1>
+  <pre id="log"></pre>
+  <script>
+    var log = document.getElementById('log')
+    Testem.handleConsoleMessage = function(msg) {
+      Testem.emit('tap', msg)
+      log.appendChild(document.createTextNode(msg + '\n'))
+      return false
+    };
+  </script>
+  <script src="http://localhost:8080/bundle.js"></script>
+</body>
+
+</html>
