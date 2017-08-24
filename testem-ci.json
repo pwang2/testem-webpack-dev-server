@@ -1,0 +1,5 @@
+{
+  "framework": "tap",
+  "disable_watching": true,
+  "serve_files": ["./dist/bundle.js"]
+}

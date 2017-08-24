@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "testdevserver": "webpack-dev-server --inline --config webpack.config.js --port 8080",
+    "testem": "testem",
+    "test": "run-p testdevserver testem",
+    "test:ci": "webpack && testem ci -f testem-ci.json | tap-spec"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,10 @@
     "babel-plugin-istanbul": "^4.1.4",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
-    "tape": "^4.8.0"
+    "npm-run-all": "^4.0.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0",
+    "testem": "^1.18.4",
+    "webpack-dev-server": "^2.7.1"
   }
 }
